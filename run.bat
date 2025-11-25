@@ -1,6 +1,6 @@
 @echo off
 
-echo Running the program...
-python color_reduction_gui.py
+echo Starting Professional Color Reduction Tool...
+python main.py
 
 pause
