@@ -16,3 +16,5 @@ take me through the process.
 also improve this program and make professional. 
 one point that it can be improved is the tab/option 2. i give how many colors, and i get to choose the color each by each.
 in this case the existing program chooses the closest colors and represent the imge with it. but whai i want is, if i select 5 colors, i need the program to divide the image to 5 colors (closer), and represent the image with 5 selected colors. because i use this program to see how it will tourn out to be an image turn in to 3 d print with color filaments i have
+
+
