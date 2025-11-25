@@ -1,108 +1,149 @@
+# Color Reduction Pro
 
-# Color Reduction Tool for 3D Printing
+A professional desktop application for intelligent color reduction, specifically designed for 3D printing filament planning and visualization.
 
-A professional desktop application for reducing image colors, specifically designed for 3D printing filament planning and visualization.
+![Color Reduction Pro](https://img.shields.io/badge/Version-1.0.0-blue)
+![Python](https://img.shields.io/badge/Python-3.8%2B-green)
 
-## Features
+## 🚀 Features
 
-### Auto Mode
-- Automatically reduce images to a specified number of colors using K-means clustering
-- Quick processing for general color reduction tasks
-- Side-by-side comparison of original and processed images
+### Auto Color Reduction
+- **Smart Clustering**: Automatically reduces images to specified color counts using K-means clustering
+- **Performance Optimized**: Handles large images efficiently with intelligent resizing
+- **Quality Preservation**: Maintains image quality while reducing color complexity
 
 ### 3D Printing Mode
-- **Color Analysis**: Automatically detects dominant color regions in your image
-- **Filament Color Mapping**: Map your actual filament colors to image regions based on luminosity matching
-- **Realistic Simulation**: See how your 3D print will look with specific filament colors
+- **Filament Planning**: Map your actual filament colors to images for print visualization
+- **Luminosity Mapping**: Intelligent color matching based on perceived brightness
+- **Real-time Preview**: See how your print will look with selected filament colors
 - **Professional Workflow**: Upload → Analyze → Select Colors → Process → Save
 
-## Installation
+## 🛠️ Installation
 
-1. **Install Python** (3.8 or higher required)
-   - Download from [python.org](https://python.org)
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
 
-2. **Install Dependencies**
+### Quick Setup
+1. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run the Application**
+2. **Run the Application**
    ```bash
-   python color_reduction_gui.py
+   python main.py
    ```
 
-   Or use the provided batch files:
-   - `installer.bat` - Installs dependencies
-   - `run.bat` - Runs the application
+   Or use the provided batch files on Windows:
+   - `installer.bat` - Installs all dependencies
+   - `run.bat` - Launches the application
 
-## Usage
+## 📖 Usage
 
 ### Auto Mode (Quick Processing)
-1. Select number of target colors
-2. Upload an image
-3. Click "Process"
+1. Select target color count (1-12)
+2. Upload your image
+3. Click "Process" for automatic color reduction
 4. Save the result
 
 ### 3D Printing Mode (Advanced)
 1. **Upload Image**: Load your reference image
-2. **Set Color Count**: Choose how many filament colors you want to use
-3. **Analyze Image**: Click "Analyze Image Colors" to find natural color divisions
-4. **Select Filament Colors**: Choose your actual filament colors using the color picker
-5. **Process**: Click "Process with Selected Colors" to apply luminosity-based mapping
+2. **Set Color Count**: Choose how many filament colors to use (1-8)
+3. **Analyze Colors**: Click "Analyze Colors" to find natural color divisions
+4. **Select Filaments**: Choose your actual filament colors using the color picker
+5. **Process**: Click "Process" to apply intelligent luminosity-based mapping
 6. **Save**: Export the final 3D printing simulation
 
-## How It Works
+## 🎯 How It Works
 
-### Color Mapping Algorithm
-The application uses intelligent luminosity-based mapping:
+### Intelligent Color Mapping
+The application uses advanced algorithms to ensure realistic results:
 
-1. **Color Analysis**: K-means clustering identifies the dominant color regions in your image
-2. **Luminosity Calculation**: Both image colors and filament colors are sorted by perceived brightness
-3. **Smart Mapping**: Darkest filament color maps to darkest image region, lightest to lightest, etc.
-4. **Pixel Replacement**: Each pixel is replaced with the appropriate filament color based on its original color region
+1. **Color Analysis**: K-means clustering identifies dominant color regions
+2. **Luminosity Calculation**: Colors are sorted by human-perceived brightness
+3. **Smart Mapping**: Darkest filament → darkest image region, lightest → lightest
+4. **Pixel Replacement**: Each pixel is mapped to the appropriate filament color
 
-### Technical Details
-- **K-means Clustering**: For automatic color region detection
-- **Luminosity Formula**: `0.2126*R + 0.7152*G + 0.0722*B` for accurate brightness perception
-- **Efficient Processing**: Automatic image resizing for large files while maintaining quality
-- **Color Accuracy**: Preserves your exact filament colors in the final output
+### Technical Excellence
+- **Clean Architecture**: Domain-driven design with proper separation of concerns
+- **Professional Error Handling**: Comprehensive validation and user feedback
+- **Performance Optimized**: Efficient processing for large images
+- **Modern GUI**: Clean, professional interface with real-time previews
 
-## Use Cases
-
-- **3D Printing Planning**: Visualize multi-color prints before printing
-- **Filament Management**: Plan color usage for available filament spools
-- **Art Preparation**: Prepare images for multi-material 3D printing
-- **Color Study**: Analyze color distribution in images
-
-## Requirements
-
-- Python 3.8+
-- OpenCV
-- NumPy
-- scikit-learn
-- Pillow (PIL)
-- tkinter (usually included with Python)
-
-## File Structure
+## 🏗️ Architecture
 
 ```
-color-reduction-tool/
-├── color_reduction_gui.py  # Main application
-├── requirements.txt        # Python dependencies
-├── installer.bat          # Windows dependency installer
-├── run.bat               # Windows application launcher
-└── README.md             # This file
+Color Reduction Pro/
+├── domain.py          # Business logic & data models
+├── application.py     # Use cases & workflows  
+├── infrastructure.py  # Technical implementations
+├── interface.py       # Modern GUI
+└── main.py           # Application entry point
 ```
 
-## Support
+Built with clean architecture principles:
+- **Domain Layer**: Pure business logic (colors, validation, rules)
+- **Application Layer**: Use cases and workflows
+- **Infrastructure Layer**: Technical details (file I/O, algorithms)
+- **Interface Layer**: Professional GUI separated from business logic
 
-For issues or feature requests, please check that:
-- All dependencies are properly installed
-- You're using supported image formats (PNG, JPG, JPEG, BMP, TIFF)
-- Your image files are not corrupted
+## 📋 Requirements
 
-## License
+```txt
+opencv-python>=4.5.0    # Image processing
+numpy>=1.21.0          # Numerical operations
+Pillow>=8.3.0          # Image handling
+scikit-learn>=1.0.0    # Machine learning (K-means)
+```
+
+## 🖼️ Supported Formats
+
+- **PNG** - Recommended for lossless quality
+- **JPEG** - Standard photography format
+- **BMP** - Windows bitmap
+- **TIFF** - High-quality professional format
+
+## 💡 Use Cases
+
+### 3D Printing
+- Visualize multi-color prints before printing
+- Plan filament usage and color combinations
+- Create realistic print simulations
+
+### Design & Art
+- Prepare images for multi-material printing
+- Study color distribution and composition
+- Create artistic color-reduced versions
+
+### Education
+- Learn about color theory and perception
+- Understand clustering algorithms
+- Study image processing techniques
+
+## 🐛 Troubleshooting
+
+### Common Issues
+- **Large images**: Automatically resized for performance
+- **Unsupported formats**: Use PNG, JPEG, BMP, or TIFF
+- **Color analysis**: Ensure good contrast in source images
+
+### Getting Help
+1. Check that all dependencies are installed
+2. Verify image file is not corrupted
+3. Ensure sufficient system memory for large images
+
+## 📄 License
 
 This project is open source and available under the MIT License.
 
+## 🔮 Future Enhancements
 
+- Batch processing for multiple images
+- Advanced color space options (LAB, HSV)
+- Custom color palette import/export
+- Print preparation tools (scaling, positioning)
+
+---
+
+**Color Reduction Pro** - Professional color processing for makers, designers, and 3D printing enthusiasts.
